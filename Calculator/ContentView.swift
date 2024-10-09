@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct ContentView: View {
-    
-    
+    @State var model = CalculatorViewModel()
     
     var body: some View {
         VStack {
             VStack(alignment: .trailing, spacing: 20) {
                 HStack {
                     Spacer()
-                    Text("OUTPUT")
+                    Text(model.output)
                         .font(.largeTitle)
                 }
                 HStack {
@@ -53,15 +52,17 @@ struct ContentView: View {
                 ActionButton(action: .equal)
             }
         }
+        .environment(model)
     }
 }
 
 struct NumberButton: View {
     let number: Int
+    @Environment(CalculatorViewModel.self) var model
     
     var body: some View {
         Button {
-            
+            model.numberTapped(number)
         } label: {
             Text("\(number)")
         }
