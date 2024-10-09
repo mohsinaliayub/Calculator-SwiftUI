@@ -65,6 +65,7 @@ struct NumberButton: View {
             model.numberTapped(number)
         } label: {
             Text("\(number)")
+                .frame(width: 70, height: 70)
         }
         .foregroundStyle(.black.opacity(0.8))
         .font(.largeTitle)

@@ -19,4 +19,16 @@ class CalculatorViewModel {
     func clearDisplay() {
         output = ""
     }
+    
+    func operationTapped(_ operation: Operation) {
+        
+    }
+}
+
+enum Operation {
+    case addition
+    case subtraction
+    case multiplication
+    case division
+    case equal
 }
